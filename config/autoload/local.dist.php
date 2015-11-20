@@ -13,7 +13,7 @@
 
 return array(
     'db' => array(
-         'username' => 'root',
-         'password' => '',
+         'username' => 'YourUsername',
+         'password' => 'YourPassword',
      ),
 );
