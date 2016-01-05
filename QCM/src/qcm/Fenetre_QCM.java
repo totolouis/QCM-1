@@ -212,7 +212,11 @@ public class Fenetre_QCM extends JFrame{
         question_text.setLineWrap(true);
         
         Bouton suivant_bout= new Bouton("Ajouter une question");
+        suivant_bout.setPreferredSize(new Dimension(200,80));
         Bouton valider=new Bouton("valdier le QCM");
+        valider.setOpaque(false);
+        valider.setForeground(new Color(250,90,0));
+        valider.setPreferredSize(new Dimension(300,100));
         
         //repartition des composants
         
@@ -222,7 +226,6 @@ public class Fenetre_QCM extends JFrame{
         supprimer_bout.addActionListener(new ActionListener() {
              @Override public void actionPerformed(ActionEvent e){
                 // on change au pano de depart
-                init();
              }
          });
         //pour les questions/reponses
@@ -259,7 +262,6 @@ public class Fenetre_QCM extends JFrame{
             pano_QR.add(vrai_labels.get(i),cont);
             cont.gridy++;
         }
-        
         //pour le bandeau
         suivant_bout.addActionListener(new ActionListener() {
              @Override public void actionPerformed(ActionEvent e){
@@ -269,13 +271,15 @@ public class Fenetre_QCM extends JFrame{
                 professeurCreationQuestion();
              }
          });
-        bandeau_bas.add(suivant_bout);
+        bandeau_bas.setLayout(new BorderLayout());
+        bandeau_bas.add(suivant_bout,BorderLayout.CENTER);
+        bandeau_bas.add(valider,BorderLayout.EAST);
         bandeau_bas.updateUI();
         
         //general
         pano1.setLayout(new BorderLayout());
-        pano1.add(list_panel,BorderLayout.WEST);
         pano1.add(pano_QR,BorderLayout.CENTER);
+        pano1.add(list_panel,BorderLayout.WEST);
         pano1.updateUI();
     }
     
