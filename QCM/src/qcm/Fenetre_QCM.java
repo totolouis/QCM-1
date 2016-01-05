@@ -99,7 +99,7 @@ public class Fenetre_QCM extends JFrame{
                      //alors on change de pano
                      pano1.removeAll();
                      bandeau_bas.removeAll();
-                     professeurCreationQCM();
+                     etudiant();
                  }else{
                      System.out.println("mot de passe ou login non rempli");
                  }
@@ -178,7 +178,41 @@ public class Fenetre_QCM extends JFrame{
     }
     
     public void etudiant(){
+        JLabel lab = new JLabel("Choisir une matière :");
+        Bouton suivant_bout= new Bouton("SUIVANT");
+        Bouton math = new Bouton ("Mathématiques");
+        Bouton francais = new Bouton ("Français");
+        Bouton anglais = new Bouton ("Anglais");
+        Bouton sport = new Bouton ("Sport");
+        Bouton prog = new Bouton ("Programmation");
         
+        lab.setFont(new Font("Century bold", 0, 60));
+        lab.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
+        
+        GridBagConstraints cont = new GridBagConstraints();
+        
+        cont.gridy=0;
+        cont.gridx=0;
+        pano1.add(lab, cont);
+        cont.gridy=1;
+        pano1.add(math, cont);
+        cont.gridx=1;
+        pano1.add(francais, cont);
+        cont.gridx=2;
+        pano1.add(anglais, cont);
+        cont.gridx=3;
+        pano1.add(sport, cont);
+        cont.gridy=2;
+        cont.gridx=0;
+        pano1.add(prog, cont);
+        bandeau_bas.updateUI();
+        pano1.updateUI();
+        
+        math.addActionListener(new ActionListener() {
+            @Override public void actionPerformed(ActionEvent e){
+                
+            }
+        });
     }
 }
 
