@@ -5,6 +5,7 @@
  */
 package qcm;
 
+import Utilitaires.Bouton;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -98,7 +99,7 @@ public class Fenetre_QCM extends JFrame{
                      //alors on change de pano
                      pano1.removeAll();
                      bandeau_bas.removeAll();
-                     professeur();
+                     professeurCreationQCM();
                  }else{
                      System.out.println("mot de passe ou login non rempli");
                  }
@@ -127,7 +128,7 @@ public class Fenetre_QCM extends JFrame{
         this.getContentPane().add(pano1,BorderLayout.CENTER); 
     }
      
-    public void professeur(){
+    public void professeurCreationQCM(){
         //interface du professeur
         JLabel titre=new JLabel("Creer une question");
         Bouton suivant_bout= new Bouton("SUIVANT");
