@@ -19,16 +19,22 @@ import java.util.ArrayList;
 public class Data {
     Connection c;
     ArrayList<Professeur> prof = new ArrayList<>();
+    ArrayList<Eleves> el=new ArrayList<>();
     
-    /*public void recupProf () throws SQLException{
+   public void recupProf () throws SQLException{
         Statement st=c.createStatement();
-    //    ResultSet rs=st.executeQuery("Select * from Professeur");
-       // while(rs.next())
-           // prof.add(new Professeur())
-            
-        
-        
-  //  }*/
+        ResultSet rs=st.executeQuery("Select * from Professeur");
+        while(rs.next())
+            prof.add(new Professeur(rs.getInt("idProfesseur"),rs.getString("nom"),rs.getString("prenom"),rs.getString("mdp"),rs.getString("matiere")));       
+    }
+   
+    public void recupEleve() throws SQLException{
+        Statement st=c.createStatement();
+        ResultSet rs=st.executeQuery("Select * from Eleves");
+        while(rs.next())
+            el.add(new Eleves(rs.getInt("idEleve"),rs.getString("nomEleve"),rs.getString("prenomEleve"),rs.getString("mdpEleve")));       
+    }
+    
    
     
     public Data() throws SQLException, InstantiationException, IllegalAccessException{
@@ -45,7 +51,19 @@ public class Data {
             
         }
         c=DriverManager.getConnection("jdbc:sqlite:QCM.sqlite");
+        recupProf();
+        recupEleve();
               
     }
+
+    public ArrayList<Professeur> getProf() {
+        return prof;
+    }
+
+    public ArrayList<Eleves> getEl() {
+        return el;
+    }
+    
+    
     
 }
