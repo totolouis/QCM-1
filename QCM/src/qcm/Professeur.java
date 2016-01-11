@@ -5,6 +5,8 @@
  */
 package qcm;
 
+import Utilitaires.Utilisateur;
+
 /**
  *
  * @author rayanmehdi1

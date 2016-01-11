@@ -25,6 +25,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
@@ -105,10 +106,12 @@ public class Fenetre_QCM extends JFrame{
                      bandeau_bas.removeAll();
                      professeurCreationQCM();
                  }else{
-                     System.out.println("mot de passe ou login non rempli");
+                     JOptionPane erreur = new JOptionPane();
+                     erreur.showMessageDialog(erreur, "Identifiant ou mot de passe incorrect");
                  }
              }
          });
+        
         
         pano1.add(log_label,cont);
         cont.gridy=1;
@@ -297,6 +300,7 @@ public class Fenetre_QCM extends JFrame{
         
         GridBagConstraints cont = new GridBagConstraints();
         
+        cont.fill = GridBagConstraints.HORIZONTAL;
         cont.gridy=0;
         cont.gridx=0;
         pano1.add(lab, cont);
