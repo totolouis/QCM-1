@@ -5,10 +5,13 @@
  */
 package qcm;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author rayanmehdi1
  */
 public class Questions {
+    ArrayList<Reponses> rep;
     
 }

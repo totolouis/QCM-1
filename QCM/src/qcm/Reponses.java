@@ -10,5 +10,18 @@ package qcm;
  * @author rayanmehdi1
  */
 public class Reponses {
+    private int idQCM, idQuestion, idReponse;
+    private String intituleRep;
+    private boolean bonneRep;
+
+    public Reponses(int idQCM, int idQuestion, int idReponse, String intituleRep, boolean bonneRep) {
+        this.idQCM = idQCM;
+        this.idQuestion = idQuestion;
+        this.idReponse = idReponse;
+        this.intituleRep = intituleRep;
+        this.bonneRep = bonneRep;
+    }
+    
+    
     
 }

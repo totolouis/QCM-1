@@ -20,6 +20,7 @@ public class Data {
     Connection c;
     ArrayList<Professeur> prof = new ArrayList<>();
     ArrayList<Eleves> el=new ArrayList<>();
+    ArrayList<Reponses> rep=new ArrayList<>();
     
    public void recupProf () throws SQLException{
         Statement st=c.createStatement();
@@ -33,6 +34,13 @@ public class Data {
         ResultSet rs=st.executeQuery("Select * from Eleves");
         while(rs.next())
             el.add(new Eleves(rs.getInt("idEleve"),rs.getString("nomEleve"),rs.getString("prenomEleve"),rs.getString("mdpEleve")));       
+    }
+    
+    public void recupRep() throws SQLException{
+        Statement st=c.createStatement();
+        ResultSet rs=st.executeQuery("Select * from Reponses");
+        while(rs.next())
+            rep.add(new Reponses(rs.getInt("idQcm"), rs.getInt("idQuestion"), rs.getInt("idReponse"),rs.getString("intituleRep"),rs.getBoolean("bonneReponse")));       
     }
     
    
