@@ -7,8 +7,15 @@ package qcm;
 
 /**
  *
- * @author rayanmehdi1
+ * @author Matthieu
  */
-public class QCM {
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Fenetre_QCM fen = new Fenetre_QCM();
+    }
     
 }
