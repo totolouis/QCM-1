@@ -100,7 +100,7 @@ public class PanelCreationQCM extends JPanel{
          });
     }
     private void update(){  
-        panelCard.add(new PanelCreationQuestion(),"Question");
+        panelCard.add(new PanelCreationQuestion(panelCard,0),"Question");
         CardLayout cl = (CardLayout)(panelCard.getLayout());
         cl.show( panelCard, "Question");
     }

@@ -7,7 +7,9 @@ package Utilitaires;
 
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.border.BevelBorder;
 
 /**
  *
@@ -20,6 +22,7 @@ public class Bouton extends JButton{
         setFont(f);
         setBorderPainted(false);
         setFocusPainted(false);
+        setBorder(BorderFactory.createBevelBorder(0, Color.lightGray, Color.yellow));
         setBackground(new Color(250,90,0));
     }
 }
