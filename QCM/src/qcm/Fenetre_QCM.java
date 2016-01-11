@@ -104,7 +104,7 @@ public class Fenetre_QCM extends JFrame{
                      //alors on change de pano
                      pano1.removeAll();
                      bandeau_bas.removeAll();
-                     etudiant();
+                     professeurCreationQCM();
                  }else{
                      JOptionPane erreur = new JOptionPane();
                      erreur.showMessageDialog(erreur, "Identifiant ou mot de passe incorrect");
